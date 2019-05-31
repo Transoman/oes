@@ -1,15 +1,28 @@
 .process
-  display: none
-  height: 100vh
+  padding-top: 20px
+  padding-bottom: 160px
   background:
     repeat: no-repeat
-    position: center
+    position: center top
     size: cover
+  +r(767)
+    padding-top: 0
+    padding-bottom: 50px
+  .section-title
+    +r(1499)
+      margin-bottom: 30px
+  &__wrap
+    position: relative
+    +r(1200)
+      margin-bottom: 30px
 
 .process-list
-  display: none
   position: relative
   height: 670px
+  +r(1499)
+    height: 510px
+  +r(767)
+    height: auto
   &::before
     content: ''
     position: absolute
@@ -19,43 +32,238 @@
     width: 450px
     height: 450px
     background: url(../images/content/process-content.svg) no-repeat center / contain
+    +r(1499)
+      width: 390px
+      height: 390px
+    +r(767)
+      display: none
   &__item
+    +r(767)
+      margin-bottom: 10px
+      padding: 8px 25px 8px 10px
+      background-color: #fff
+      border: 0.5px solid #F3F3F3
+      box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.05)
+      border-radius: 5px
     &--1
       .process-list
         &__title
           top: 0
           left: 50%
           margin-left: -50px
+          +r(1499)
+            top: -10px
+          +r(767)
+            margin-left: 0
+            top: auto
+            left: auto
     &--2
       .process-list
         &__title
           right: 110px
           top: 140px
+          +r(1499)
+            right: 160px
+            top: 80px
+          +r(1200)
+            right: 30px
+          +r(767)
+            right: auto
+            top: auto
     &--3
       .process-list
         &__title
           right: 70px
           bottom: 230px
+          +r(1499)
+            right: 130px
+            bottom: 150px
+          +r(1200)
+            right: 0
+          +r(767)
+            right: auto
+            bottom: auto
+    &--4
+      .process-list
+        &__title
+          right: 210px
+          bottom: 30px
+          +r(1499)
+            bottom: 0
+            right: 240px
+          +r(1200)
+            right: 100px
+          +r(767)
+            right: auto
+            bottom: auto
+    &--5
+      .process-list
+        &__title
+          text-align: right
+          left: 210px
+          bottom: 55px
+          +r(1499)
+            bottom: 25px
+            left: 220px
+          +r(1200)
+            left: 100px
+          +r(767)
+            bottom: auto
+            left: auto
+            text-align: left
+    &--6
+      .process-list
+        &__title
+          text-align: right
+          left: 70px
+          bottom: 230px
+          +r(1499)
+            left: 130px
+            bottom: 150px
+          +r(1200)
+            left: 0
+          +r(767)
+            left: auto
+            bottom: auto
+            text-align: left
+    &--7
+      .process-list
+        &__title
+          text-align: right
+          left: 110px
+          top: 140px
+          +r(1499)
+            left: 160px
+            top: 80px
+          +r(1200)
+            left: 30px
+          +r(767)
+            left: auto
+            top: auto
+            text-align: left
+    &.active
+      background-color: #CCEDFB
+      .process-list
+        &__title
+          &::before
+            background-color: #fff
+          svg
+            transform: rotate(180deg)
   &__title
     position: absolute
     width: 210px
     font-size: 16px
     font-weight: 600
+    +trans
+    +r(992)
+      width: 140px
+    +r(767)
+      position: relative
+      top: auto
+      left: auto
+      bottom: auto
+      right: auto
+      width: auto
+      margin: 0
+      padding-left: 55px
+      padding-right: 10px
+      font-size: 11px
+      font-weight: 500
+      cursor: pointer
+      &::before
+        content: ''
+        position: absolute
+        left: 0
+        top: 7px
+        width: 4px
+        height: 4px
+        border-radius: 50%
+        background-color: $accent
+        +trans
     span
       display: block
       margin-bottom: 5px
       color: $main-color
+      +r(767)
+        position: absolute
+        top: 1px
+        left: 10px
+        font-size: 10px
+    svg
+      position: absolute
+      right: 0
+      top: 3px
+      width: 6px
+      height: 11px
+      fill: $main-color
+      +trans
+      display: none
+      +r(767)
+        display: block
+    &.is-active
+      color: $accent
   &__content
-    display: none
+    opacity: 0
+    position: absolute
+    width: 310px
+    top: 35%
+    left: 50%
+    z-index: 1
+    transform: translateX(-50%)
+    text-align: center
+    +r(1499)
+      width: 300px
+      top: 30%
+    +r(767)
+      display: none
+      position: static
+      top: auto
+      left: auto
+      transform: none
+      width: auto
+      padding-left: 55px
+      text-align: left
+      opacity: 1
+    h4
+      margin-bottom: 20px
+      font-family: $main-font
+      font-size: 16px
+      font-weight: 500
+      text-transform: uppercase
+      +r(767)
+        margin: 10px 0
+        font-size: 10px
+        font-weight: 500
+        color: $accent
+    ul
+      margin: 0
+      padding: 0
+      list-style: none
+      +r(767)
+        margin-bottom: 10px
+        font-size: 9px
+      li
+        margin-bottom: 10px
+        +r(767)
+          margin-bottom: 5px
+        &::before
+          content: '- '
+        &:last-child
+          margin-bottom: 0
 
 .process-line
   position: absolute
   top: 50%
   left: 50%
-  transform: translate(-50%, -35%)
+  transform: translate(-50%, -50%)
   width: 500px
   height: 500px
   background: url(../images/general/polygon.svg) no-repeat center / contain
+  +r(1499)
+    width: 400px
+    height: 400px
+  +r(767)
+    display: none
   &__item
     position: absolute
     width: 30px
@@ -70,6 +278,7 @@
       height: 12px
       border-radius: 50%
       background-color: #959595
+      +trans
     &::after
       content: ''
       position: absolute
@@ -80,6 +289,7 @@
       border-radius: 50%
       background-color: #E9E9E9
       box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1)
+      +trans
     &--1
       top: -5px
       left: 50%
@@ -87,18 +297,49 @@
     &--2
       right: 40px
       top: 87px
+      +r(1499)
+        right: 27px
+        top: 68px
     &--3
       bottom: 170px
       right: -10px
+      +r(1499)
+        bottom: 135px
     &--4
       bottom: -5px
       right: 125px
+      +r(1499)
+        right: 95px
     &--5
       bottom: -5px
       left: 125px
+      +r(1499)
+        left: 95px
     &--6
       bottom: 170px
       left: -10px
+      +r(1499)
+        bottom: 130px
     &--7
       top: 87px
       left: 40px
+      +r(1499)
+        top: 68px
+        left: 27px
+    &.less
+      &::before
+        background-color: $accent
+      &::after
+        background-color: #FBE7EA
+    &.is-active
+      &::before
+        background-color: $accent
+      &::after
+        background-color: #fff
+
+#path
+  +r(1499)
+    width: 400px
+    height: 400px
+  +r(767)
+    display: none
