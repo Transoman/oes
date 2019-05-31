@@ -1,0 +1,23 @@
+section.s-form
+  .container
+    .section-head
+      h2.section-title <span>Заказать просчет стоимости</span>
+      p Заполните поля формы и мы свяжемся с вами для уточнения деталей просчета
+
+    form.s-form__form
+      .form-group
+        span.form-icon
+          +icon('mail')
+        input(type="email", name="email", placeholder="Ваш E-mail", required)
+      .form-group
+        span.form-icon
+          +icon('phone')
+        input(type="tel", name="phone", placeholder="Ваш телефон", required)
+      .form-group
+        span.form-icon
+          +icon('web')
+        input(type="url", name="domain", placeholder="Ваш домен", required)
+      .form-group
+        input(type="submit", value="Заказать").btn
+
+    p.s-form__note Нажимая на кнопку «Заказать», вы соглашаетесь с <a href="#">Условиями использования</a>

@@ -1,0 +1,89 @@
+.s-form
+  color: #fff
+  background: url(../images/content/form-bg.jpg) no-repeat center / cover, linear-gradient(270deg, #DB1032 3.91%, #F22043 86.82%)
+  text-align: center
+  .section-title
+    font-size: 35px
+    color: #fff
+    +r(1200)
+      font-size: 30px
+    +r(767)
+      font-size: 21px
+  &__note
+    font-size: 12px
+    color: #E9E9E9
+    +r(767)
+      font-size: 10px
+    a
+      color: #E9E9E9
+      text-decoration: underline
+      &:hover, &:focus
+        color: #fff
+        text-decoration: none
+  &__form
+    display: flex
+    flex-wrap: wrap
+    align-items: center
+    margin: 0 -15px 10px
+    +r(767)
+      max-width: 300px
+      margin: 0 auto 10px
+    .form-group
+      position: relative
+      padding: 0 15px
+      width: 25%
+      margin-bottom: 10px
+      +r(992)
+        width: 50%
+      +r(767)
+        width: 100%
+    input
+      border-radius: 50px
+    input[type="email"],
+    input[type="url"],
+    input[type="tel"]
+      height: auto
+      padding: 20px 15px 20px 55px
+      font-size: 16px
+      font-weight: 300
+      color: $main-color
+      background: #fff
+      box-shadow: 5px 10px 40px rgba(217, 14, 48, 0.5), inset 0px 0px 5px rgba(0, 0, 0, 0.2)
+      border: 0
+      +r(767)
+        padding:
+          top: 15px
+          bottom: 15px
+      &::placehodler
+        color: inherit
+    input[type="submit"]
+      width: 100%
+      padding: 17px
+      background: none
+      box-shadow: none
+      border: 2px solid #fff
+      font-size: 14px
+      font-weight: 700
+      text-shadow: none
+      +trans
+      +r(767)
+        padding:
+          top: 12px
+          bottom: 12px
+      &:hover, &:focus
+        background-color: #fff
+        color: $accent !important
+    .form-icon
+      position: absolute
+      top: 20px
+      left: 35px
+      padding-right: 10px
+      line-height: 1
+      border-right: 1px solid #C4C4C4
+      +r(767)
+        top: 15px
+      svg
+        width: 17px
+        height: 17px
+        fill: $accent
+        vertical-align: middle
