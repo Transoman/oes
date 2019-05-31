@@ -1,0 +1,43 @@
+.hero
+  padding: 160px 0 200px
+  background:
+    repeat: no-repeat
+    position: center
+    size: cover
+  +r(992)
+    padding: 100px 0 145px
+  +r(767)
+    background-position: -200px center
+  &__content
+    // max-width: 700px
+    color: $title-color
+    +r(992)
+      // max-width: 530px
+    p
+      margin-bottom: 50px
+      font-size: 21px
+      +r(767)
+        margin-bottom: 30px
+        font-size: 12px
+    h1
+      margin-bottom: 50px
+      +r(767)
+        margin-bottom: 40px
+      +r(480)
+        font-size: 19px
+    .btn
+      +r(480)
+        padding-right: 35px
+        padding-left: 35px
+  &__btn-wrap
+    svg
+      width: 60px
+      height: 65px
+      margin-left: 30px
+      fill: $title-color
+      +r(767)
+        width: 40px
+        height: 43px
+        margin-left: 25px
+      +r(480)
+        margin-left: 15px

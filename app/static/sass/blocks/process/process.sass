@@ -1,0 +1,102 @@
+.process
+  display: none
+  background:
+    repeat: no-repeat
+    position: center
+    size: cover
+
+.process-list
+  position: relative
+  height: 670px
+  &::before
+    content: ''
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    width: 450px
+    height: 450px
+    background: url(../images/content/process-content.svg) no-repeat center / contain
+  &__item
+    &--1
+      .process-list
+        &__title
+          top: 0
+          left: 50%
+          margin-left: -50px
+    &--2
+      .process-list
+        &__title
+          right: 110px
+          top: 140px
+    &--3
+      .process-list
+        &__title
+          right: 70px
+          bottom: 230px
+  &__title
+    position: absolute
+    width: 210px
+    font-size: 16px
+    font-weight: 600
+    span
+      display: block
+      margin-bottom: 5px
+      color: $main-color
+  &__content
+    display: none
+
+.process-line
+  position: absolute
+  top: 50%
+  left: 50%
+  transform: translate(-50%, -35%)
+  width: 500px
+  height: 500px
+  background: url(../images/general/polygon.svg) no-repeat center / contain
+  &__item
+    position: absolute
+    width: 30px
+    height: 30px
+    &::before
+      content: ''
+      position: absolute
+      top: 9px
+      left: 9px
+      z-index: 1
+      width: 12px
+      height: 12px
+      border-radius: 50%
+      background-color: #959595
+    &::after
+      content: ''
+      position: absolute
+      top: 0
+      left: 0
+      width: 30px
+      height: 30px
+      border-radius: 50%
+      background-color: #E9E9E9
+      box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1)
+    &--1
+      top: -5px
+      left: 50%
+      margin-left: -15px
+    &--2
+      right: 40px
+      top: 87px
+    &--3
+      bottom: 170px
+      right: -10px
+    &--4
+      bottom: -5px
+      right: 125px
+    &--5
+      bottom: -5px
+      left: 125px
+    &--6
+      bottom: 170px
+      left: -10px
+    &--7
+      top: 87px
+      left: 40px

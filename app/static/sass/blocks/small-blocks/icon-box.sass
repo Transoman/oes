@@ -1,0 +1,64 @@
+.bicon-box
+  padding: 40px 40px 70px
+  background-color: #fff
+  border-radius: 10px
+  box-shadow: 0px 10px 60px rgba(0, 0, 0, 0.08)
+  margin-bottom: 40px
+  +r(767)
+    padding: 20px 20px 35px
+    margin-bottom: 20px
+  p
+    font-size: 21px
+    line-height: 1.62
+    color: $title-color
+    +r(767)
+      font-size: 10px
+    &:last-child
+      margin-bottom: 0
+  &__bicon-wrap
+    img
+      vertical-align: middle
+      +r(767)
+        width: 20px
+  &--circle
+    border-radius: 5px
+    .bicon-box
+      &__bicon-wrap
+        width: 85px
+        height: 85px
+        margin-bottom: 20px
+        border-radius: 50%
+        line-height: 85px
+        text-align: center
+        +r(767)
+          width: 42px
+          height: 42px
+          line-height: 42px
+  &--blue
+    .bicon-box
+      &__bicon-wrap
+        background-color: #CCEDFB
+  &--green
+    .bicon-box
+      &__bicon-wrap
+        background-color: #F5F9E5
+  &--red
+    .bicon-box
+      &__bicon-wrap
+        background-color: #FBE7EA
+  &--purple
+    .bicon-box
+      &__bicon-wrap
+        background-color: #EEE8F5
+  &--bg-blue
+      background-color: #CCEDFB
+  &--bg-light-green
+      background-color: #F5F9E5
+  &--bg-red
+      background-color: #FBE7EA
+  &--bg-orange
+      background-color: #FFF4D2
+  &--bg-purple
+      background-color: #FBF5FF
+  &--bg-green
+      background-color: #E2FAEB

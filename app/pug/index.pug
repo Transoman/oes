@@ -1,7 +1,11 @@
 extends template/main
 
 block variables
-  - var title = 'Главная страница'
-  - var pageClass = 'index-page'
+  - var title = 'Главная'
+  - var pageClass = ''
 
 block content
+  include pages/index/hero
+  include pages/index/tasks
+  include pages/index/process
+  include pages/index/benefits

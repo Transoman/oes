@@ -21,6 +21,7 @@
 /* Common styles */
 html
   height: 100%
+  overflow-x: hidden
 
 body
   margin: 0
@@ -38,6 +39,43 @@ img
   max-width: 100%
   height: auto
 
+h1, h2, h3, h4, h5, h6
+  margin-top: 0
+  font-family: $ms-font
+  font-weight: 700
+  color: $title-color
+
+h1
+  font-size: 45px
+  line-height: 1.4
+  +r(992)
+    font-size: 35px
+  +r(767)
+    font-size: 21px
+
+h2
+  font-size: 40px
+  +r(1200)
+    font-size: 30px
+  +r(1200)
+    font-size: 24px
+
+a
+  &:hover
+    text-decoration: none
+  &:focus
+    outline: none
+
+b, strong
+  font-weight: 500
+
+p
+  margin-top: 0
+
+section
+  position: relative
+  padding: 70px 0 60px
+
 /* Hidden element */
 .visually-hidden
   position: absolute
@@ -53,13 +91,15 @@ img
 .btn
   display: inline-block
   vertical-align: middle
-  padding: 10px 15px
-  font-family: $main-font
-  font-size: 16px
+  padding: 25px 55px
+  font-family: $ms-font
+  font-size: 14px
   font-weight: 700
   color: #fff
   text-align: center
   background-color: $accent
+  background-image: linear-gradient(180deg, $accent 0%, #D61434 100%)
+  box-shadow: 5px 10px 40px rgba($accent, 0.5), inset 0px -4px 2px rgba(0, 0, 0, 0.1)
   border: 0
   outline: none
   text-decoration: none
@@ -67,20 +107,37 @@ img
   user-select: none
   transition: all .25s ease
   text-transform: uppercase
+  letter-spacing: 0.2em
+  border-radius: 50px
+  +r(767)
+    padding-top: 17px
+    padding-bottom: 17px
   &:hover
     background-color: lighten($accent, 5%)
-  &:active
+    background-image: linear-gradient(180deg, lighten($accent, 5%) 0%, #D61434 100%)
+    color: #fff
+  &:focus
     background-color: darken($accent, 5%)
-    color: rgba(255,255,255,.3)
+    background-image: linear-gradient(180deg, #D61434 0%, #D61434 100%)
+    box-shadow: 5px 10px 40px rgba($accent, 0.5), inset 0 0 2px rgba(0, 0, 0, 0.1)
+    color: #fff
   &[disabled]
     background-color: #e5e5e5
     cursor: not-allowed
     color: #fff
 
-.wrapper
-  display: flex
-  flex-direction: column
-  height: 100%
+.container
+  padding: 0 15px
 
-.content
-  flex: 1 0 auto
+.section-title
+  margin-bottom: 50px
+  font-weight: 300
+  line-height: 1.3
+  +r(767)
+    margin-bottom: 25px
+  span
+    font-weight: 800
+    color: inherit
+
+.text-center
+  text-align: center
