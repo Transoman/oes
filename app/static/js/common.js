@@ -168,103 +168,105 @@ jQuery(document).ready(function($) {
       });
 
       // Scheme
-      var schemeLine = $("#scheme-list__line path");
+      if ($(window).width() >= 1200) {
+        var schemeLine = $("#scheme-list__line path");
 
-      var tweenScheme = new TimelineMax()
-        .add(TweenMax.to(schemeLine, 1, {strokeDashoffset: 0, ease:Linear.easeNone})) // draw word for 0.9
+        var tweenScheme = new TimelineMax()
+          .add(TweenMax.to(schemeLine, 1, {strokeDashoffset: 0, ease:Linear.easeNone})) // draw word for 0.9
 
-      pathPrepare(schemeLine);
+        pathPrepare(schemeLine);
 
-      let scene2 = new ScrollMagic.Scene({
-        triggerElement: ".scheme",
-        duration: 800,
-        triggerHook: 0,
-        tweenChanges: true
-      })
-        .setTween(tweenScheme)
-        // .addIndicators() // add indicators (requires plugin)
-        .addTo(controller);
+        let scene2 = new ScrollMagic.Scene({
+          triggerElement: ".scheme",
+          duration: 800,
+          triggerHook: 0,
+          tweenChanges: true
+        })
+          .setTween(tweenScheme)
+          // .addIndicators() // add indicators (requires plugin)
+          .addTo(controller);
 
-        scene2.on("progress", function (event) {
-        if (event.progress <= 0.1111) {
-          $('.scheme-list__item--1').addClass('is-active');
-        }
-        else {
-          $('.scheme-list__item--1').removeClass('is-active');
-        }
-    
-        if (event.progress > 0.1111 && event.progress <= 0.2222) {
-          $('.scheme-list__item--2').prevAll().addClass('less');
-          $('.scheme-list__item--2').addClass('is-active');
-        }
-        else {
-          $('.scheme-list__item--2').nextAll().removeClass('less');
-          $('.scheme-list__item--2').removeClass('is-active');
-        }
-    
-        if (event.progress > 0.2222 && event.progress <= 0.3333) {
-          $('.scheme-list__item--3').prevAll().addClass('less');
-          $('.scheme-list__item--3').addClass('is-active');
-        }
-        else {
-          $('.scheme-list__item--3').nextAll().removeClass('less');
-          $('.scheme-list__item--3').removeClass('is-active');
-        }
-    
-        if (event.progress > 0.3333 && event.progress <= 0.4444) {
-          $('.scheme-list__item--4').prevAll().addClass('less');
-          $('.scheme-list__item--4').addClass('is-active');
-        }
-        else {
-          $('.scheme-list__item--4').nextAll().removeClass('less');
-          $('.scheme-list__item--4').removeClass('is-active');
-        }
-    
-        if (event.progress > 0.4444 && event.progress <= 0.5555) {
-          $('.scheme-list__item--5').prevAll().addClass('less');
-          $('.scheme-list__item--5').addClass('is-active');
-        }
-        else {
-          $('.scheme-list__item--5').nextAll().removeClass('less');
-          $('.scheme-list__item--5').removeClass('is-active');
-        }
-    
-        if (event.progress > 0.5555 && event.progress <= 0.6666) {
-          $('.scheme-list__item--6').prevAll().addClass('less');
-          $('.scheme-list__item--6').addClass('is-active');
-        }
-        else {
-          $('.scheme-list__item--6').nextAll().removeClass('less');
-          $('.scheme-list__item--6').removeClass('is-active');
-        }
-    
-        if (event.progress > 0.6666 && event.progress <= 0.7777) {
-          $('.scheme-list__item--7').prevAll().addClass('less');
-          $('.scheme-list__item--7').addClass('is-active');
-        }
-        else {
-          $('.scheme-list__item--7').nextAll().removeClass('less');
-          $('.scheme-list__item--7').removeClass('is-active');
-        }
+          scene2.on("progress", function (event) {
+          if (event.progress <= 0.1111) {
+            $('.scheme-list__item--1').addClass('is-active');
+          }
+          else {
+            $('.scheme-list__item--1').removeClass('is-active');
+          }
+      
+          if (event.progress > 0.1111 && event.progress <= 0.2222) {
+            $('.scheme-list__item--2').prevAll().addClass('less');
+            $('.scheme-list__item--2').addClass('is-active');
+          }
+          else {
+            $('.scheme-list__item--2').nextAll().removeClass('less');
+            $('.scheme-list__item--2').removeClass('is-active');
+          }
+      
+          if (event.progress > 0.2222 && event.progress <= 0.3333) {
+            $('.scheme-list__item--3').prevAll().addClass('less');
+            $('.scheme-list__item--3').addClass('is-active');
+          }
+          else {
+            $('.scheme-list__item--3').nextAll().removeClass('less');
+            $('.scheme-list__item--3').removeClass('is-active');
+          }
+      
+          if (event.progress > 0.3333 && event.progress <= 0.4444) {
+            $('.scheme-list__item--4').prevAll().addClass('less');
+            $('.scheme-list__item--4').addClass('is-active');
+          }
+          else {
+            $('.scheme-list__item--4').nextAll().removeClass('less');
+            $('.scheme-list__item--4').removeClass('is-active');
+          }
+      
+          if (event.progress > 0.4444 && event.progress <= 0.5555) {
+            $('.scheme-list__item--5').prevAll().addClass('less');
+            $('.scheme-list__item--5').addClass('is-active');
+          }
+          else {
+            $('.scheme-list__item--5').nextAll().removeClass('less');
+            $('.scheme-list__item--5').removeClass('is-active');
+          }
+      
+          if (event.progress > 0.5555 && event.progress <= 0.6666) {
+            $('.scheme-list__item--6').prevAll().addClass('less');
+            $('.scheme-list__item--6').addClass('is-active');
+          }
+          else {
+            $('.scheme-list__item--6').nextAll().removeClass('less');
+            $('.scheme-list__item--6').removeClass('is-active');
+          }
+      
+          if (event.progress > 0.6666 && event.progress <= 0.7777) {
+            $('.scheme-list__item--7').prevAll().addClass('less');
+            $('.scheme-list__item--7').addClass('is-active');
+          }
+          else {
+            $('.scheme-list__item--7').nextAll().removeClass('less');
+            $('.scheme-list__item--7').removeClass('is-active');
+          }
 
-        if (event.progress > 0.7777 && event.progress <= 0.8888) {
-          $('.scheme-list__item--8').prevAll().addClass('less');
-          $('.scheme-list__item--8').addClass('is-active');
-        }
-        else {
-          $('.scheme-list__item--8').nextAll().removeClass('less');
-          $('.scheme-list__item--8').removeClass('is-active');
-        }
+          if (event.progress > 0.7777 && event.progress <= 0.8888) {
+            $('.scheme-list__item--8').prevAll().addClass('less');
+            $('.scheme-list__item--8').addClass('is-active');
+          }
+          else {
+            $('.scheme-list__item--8').nextAll().removeClass('less');
+            $('.scheme-list__item--8').removeClass('is-active');
+          }
 
-        if (event.progress > 0.8888) {
-          $('.scheme-list__item--9').prevAll().addClass('less');
-          $('.scheme-list__item--9').addClass('is-active');
-        }
-        else {
-          $('.scheme-list__item--9').nextAll().removeClass('less');
-          $('.scheme-list__item--9').removeClass('is-active');
-        }
-      });
+          if (event.progress > 0.8888) {
+            $('.scheme-list__item--9').prevAll().addClass('less');
+            $('.scheme-list__item--9').addClass('is-active');
+          }
+          else {
+            $('.scheme-list__item--9').nextAll().removeClass('less');
+            $('.scheme-list__item--9').removeClass('is-active');
+          }
+        });
+      }
     }
   };
 

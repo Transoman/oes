@@ -1,9 +1,11 @@
 .scheme
   background: url(../images/general/scheme-bg.png) no-repeat left center / auto
+  +r(767)
+    padding-bottom: 0
   .section-title
     margin-bottom: 150px
     +r(767)
-      margin-bottom: 20px
+      margin-bottom: 30px
 
 .scheme-list
   position: relative
@@ -19,7 +21,7 @@
     height: 778px
     background: url('../images/general/scheme-line.svg') no-repeat center / contain
     pointer-events: none
-    +r(767)
+    +r(1200)
       display: none
   &__wrap
     position: relative
@@ -38,6 +40,7 @@
       padding:
         right: 30px
         left: 30px
+      border-bottom: 1px solid #E3E3E3
     +r(992)
       width: 50%
     +r(767)
@@ -47,6 +50,7 @@
       padding-bottom: 35px
       padding-right: 0
       font-size: 12px
+      border-bottom: 0
     &::before
       content: ''
       position: absolute
@@ -82,29 +86,81 @@
     &:nth-child(1)
       order: 1
       border-left: 0
-      +r(767)
+      +r(1200)
         border-left: 1px solid #e3e3e3
+        border-radius: 0 0 0 20px
+      +r(767)
+        border-radius: 0
     &:nth-child(2)
       order: 2
+      +r(992)
+        border-right: 1px solid #e3e3e3
+        border-radius: 0 0 20px 0
+      +r(767)
+        border-right: 0
     &:nth-child(3)
       order: 3
+      +r(1200)
+        border-right: 1px solid #e3e3e3
+        border-radius: 0 0 20px 0
+      +r(992)
+        border-radius: 0 0 0 20px
+        border-right: 0
+      +r(767)
+        border-radius: 0
     &:nth-child(4)
       order: 6
+      +r(1200)
+        border-right: 1px solid #e3e3e3
+        border-radius: 0 0 20px 0
+        &.less, &.is-active
+          border-color: $accent
       +r(992)
         order: 4
+      +r(767)
+        border-right: 0
     &:nth-child(5)
       order: 5
+      +r(992)
+        border-radius: 0 0 0 20px
+      +r(767)
+        border-radius: 0
     &:nth-child(6)
       order: 4
       border-radius: 0 0 0 20px
       +r(992)
         order: 6
+        border-right: 1px solid #e3e3e3
+        border-radius: 0 0 20px 0
+      +r(767)
+        border-right: 0
     &:nth-child(7)
       order: 7
+      +r(1200)
+        border-left: 1px solid #e3e3e3
+        border-radius: 0 0 0 20px
+        &.less, &.is-active
+          border-color: $accent
+      +r(992)
+        border-radius: 0 0 0 20px
+      +r(767)
+        border-radius: 0
     &:nth-child(8)
       order: 8
+      +r(992)
+        border-right: 1px solid #e3e3e3
+        border-radius: 0 0 20px 0
+      +r(767)
+        border-right: 0
     &:nth-child(9)
       order: 9
+      +r(1200)
+        border-right: 1px solid #e3e3e3
+        border-radius: 0 20px 20px 0
+        &.less, &.is-active
+          border-color: $accent
+      +r(992)
+        border-radius: 0 0 20px 20px
     &:nth-last-child(-n+3)
       min-height: 170px
       +r(767)
@@ -126,6 +182,8 @@
       +r(767)
         border-left: 1px solid #e3e3e3
     &:last-child
+      +r(992)
+        margin-bottom: 0
       +r(767)
         border: 0
     p
@@ -159,7 +217,7 @@
   top: 0
   left: 0
   z-index: 1
-  width: 100%
+  width: 1173px
   pointer-event: none
-  +r(767)
+  +r(1200)
     display: none
