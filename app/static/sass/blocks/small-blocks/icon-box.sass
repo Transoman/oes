@@ -16,10 +16,14 @@
     &:last-child
       margin-bottom: 0
   &__bicon-wrap
+    flex-shrink: 0
     img
       vertical-align: middle
       +r(767)
         width: 20px
+  &__head
+    display: flex
+    align-items: center
   &--circle
     border-radius: 5px
     .bicon-box
@@ -50,6 +54,26 @@
     .bicon-box
       &__bicon-wrap
         background-color: #EEE8F5
+  &--orange
+    .bicon-box
+      &__bicon-wrap
+        background-color: #ffeecd
+  &--dblue
+    .bicon-box
+      &__bicon-wrap
+        background-color: #d0dcf8
+  &--light-green
+    .bicon-box
+      &__bicon-wrap
+        background-color: #cbf8ed
+  &--green2
+    .bicon-box
+      &__bicon-wrap
+        background-color: #d4f3d9
+  &--dorange
+    .bicon-box
+      &__bicon-wrap
+        background-color: #ffc9b8
   &--bg-blue
       background-color: #CCEDFB
   &--bg-light-green
@@ -62,3 +86,19 @@
       background-color: #FBF5FF
   &--bg-green
       background-color: #E2FAEB
+  &--d-circle
+    .bicon-box
+      &__bicon-wrap
+        position: relative
+        z-index: 1
+        &::before
+          content: ''
+          position: absolute
+          top: -10px
+          right: -10px
+          bottom: -10px
+          left: -10px
+          border-radius: inherit
+          background-color: inherit
+          opacity: 0.4
+          z-index: -1
