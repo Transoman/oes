@@ -1,4 +1,4 @@
-global.jQuery = require('jquery');
+// global.jQuery = require('jquery');
 var svg4everybody = require('svg4everybody'),
 popup = require('jquery-popup-overlay');
 // ScrollMagic = require('scrollmagic');
@@ -291,6 +291,23 @@ jQuery(document).ready(function($) {
       }
     });
   };
+
+  $('.testimonial-slider').owlCarousel({
+    items: 3,
+    nav: true,
+    loop: true,
+    center: true,
+    responsive: {
+      0: {
+        items: 2,
+        center: false,
+        margin: 10
+      },
+      993: {
+        items: 3,
+      },
+    }
+  });
 
   // SVG
   svg4everybody({});
