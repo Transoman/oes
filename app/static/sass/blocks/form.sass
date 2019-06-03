@@ -1,1 +1,41 @@
-// Form
+.form-group
+  position: relative
+  margin-bottom: 10px
+
+input.form-field
+  height: auto
+  padding: 20px 15px 20px 55px
+  font-size: 16px
+  font-weight: 300
+  color: $main-color
+  background: #fff
+  border: 0
+  box-shadow: inset 0px 0px 7px rgba(0, 0, 0, 0.13)
+  border-radius: 50px
+  +r(767)
+    padding:
+      top: 15px
+      bottom: 15px
+  &::placehodler
+    color: inherit
+
+input[type="submit"]
+  width: 100%
+  padding: 17px
+  border-radius: 50px
+  margin-top: 30px
+
+.form-icon
+  position: absolute
+  top: 20px
+  left: 20px
+  padding-right: 10px
+  line-height: 1
+  border-right: 1px solid #C4C4C4
+  +r(767)
+    top: 15px
+  svg
+    width: 17px
+    height: 17px
+    fill: $accent
+    vertical-align: middle

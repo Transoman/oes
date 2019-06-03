@@ -1,6 +1,6 @@
 // global.jQuery = require('jquery');
-var svg4everybody = require('svg4everybody'),
-popup = require('jquery-popup-overlay');
+var svg4everybody = require('svg4everybody');
+// popup = require('jquery-popup-overlay');
 // ScrollMagic = require('scrollmagic');
 import TimelineMax from 'gsap/TimelineMax';
 import TweenMax from 'gsap/TweenMax';
@@ -15,12 +15,12 @@ jQuery(document).ready(function($) {
   });
 
   // Modal
-  $('.modal').popup({
-    transition: 'all 0.3s',
-    onclose: function() {
-      $(this).find('label.error').remove();
-    }
-  });
+  // $('.modal').popup({
+  //   transition: 'all 0.3s',
+  //   onclose: function() {
+  //     $(this).find('label.error').remove();
+  //   }
+  // });
 
   let scrollProcess = function() {
     if ($(window).width() > 767) {
@@ -308,6 +308,13 @@ jQuery(document).ready(function($) {
       993: {
         items: 3,
       },
+    }
+  });
+
+  $('.open_form').magnificPopup({
+    items: {
+        src: '#modal-form',
+        type: 'inline'
     }
   });
 

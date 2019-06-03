@@ -1,0 +1,19 @@
+#modal-form.modal
+  form(action="#")
+    h3.modal__title Оставить заявку
+    p Заполните поля формы и мы свяжемся с вами <br>для уточнения деталей просчета
+    .form-group
+      span.form-icon
+        +icon('mail')
+      input(type="email", name="email", placeholder="Ваш E-mail", required).form-field
+    .form-group
+      span.form-icon
+        +icon('phone')
+      input(type="tel", name="phone", placeholder="Ваш телефон", required).form-field
+    .form-group
+      span.form-icon
+        +icon('web')
+      input(type="url", name="domain", placeholder="Ваш домен", required).form-field
+    .form-group
+      input(type="submit", value="оставить заявку").btn
+    p.modal__descr Нажимая на кнопку «оставить заявку», <br>вы соглашаетесь с <a href="#">Условиями использования</a>
