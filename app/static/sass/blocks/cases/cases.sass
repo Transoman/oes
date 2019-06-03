@@ -1,0 +1,93 @@
+.cases
+  .container
+    position: relative
+  .section-title
+    padding-right: 250px
+    +r(767)
+      padding-right: 0
+      text-align: center
+  &__btn
+    position: absolute
+    top: 0
+    right: 15px
+    display: block
+    width: 100%
+    max-width: 230px
+    +r(767)
+      position: static
+      top: auto
+      right: auto
+      margin: 0 auto
+
+.cases-slider
+  position: relative
+  padding-bottom: 50px
+  +r(767)
+    padding-bottom: 30px
+    margin-bottom: 10px
+  &__img-wrap
+    margin-bottom: 25px
+    border-radius: 5px
+    overflow: hidden
+  &__title
+    margin: 0
+    text-align: center
+    font-weight: 300
+    text-transform: uppercase
+    +r(767)
+      font-size: 12px
+    strong
+      font-weight: 600
+      text-transform: none
+  .owl-dots
+    top: auto
+    bottom: 0
+    +r(767)
+      display: block !important
+    .owl-dot
+      span
+        border: 2px solid #E5E5E5
+        background: none
+      &.active
+        span
+          background-color: $accent
+          border-color: $accent
+  .owl-controls
+    position: static
+    .owl-prev, .owl-next
+      position: absolute
+      top: 27%
+      width: 50px
+      height: 50px
+      line-height: 50px
+      border-radius: 10px
+      background-color: #fff
+      box-shadow: 5px 2px 25px rgba(0, 0, 0, 0.1)
+      +r(767)
+        width: 35px
+        height: 35px
+        line-height: 35px
+    .owl-prev
+      margin: 0 !important
+      left: -25px
+      +r(767)
+        left: -10px
+      .icon-arrow_left
+        &:before
+          content: $icon-arrow-left
+          font-family: 'icomoon2'
+          font-size: 13px
+          +r(767)
+            font-size: 9px
+    .owl-next
+      margin: 0 !important
+      right: -25px
+      +r(767)
+        right: -10px
+      .icon-arrow_right
+        &:before
+          content: $icon-arrow-right
+          font-family: 'icomoon2'
+          font-size: 13px
+          +r(767)
+            font-size: 9px
