@@ -1,4 +1,5 @@
 .hero
+  position: relative
   padding: 160px 0 200px
   background:
     repeat: no-repeat
@@ -8,17 +9,22 @@
     padding: 100px 0 145px
   +r(767)
     background-position: -200px center
+  &__img
+    position: absolute
+    left: 53%
+    top: 30px
+    +r(576)
+      display: none
   &__content
-    // max-width: 700px
+    position: relative
+    z-index: 1
     color: $title-color
-    +r(992)
-      // max-width: 530px
     p
       margin-bottom: 50px
       font-size: 21px
       +r(767)
         margin-bottom: 30px
-        font-size: 12px
+        font-size: 14px
     h1
       margin-bottom: 50px
       +r(767)

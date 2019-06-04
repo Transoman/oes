@@ -142,11 +142,8 @@
             top: auto
             text-align: left
     &.active
-      background-color: #CCEDFB
       .process-list
         &__title
-          &::before
-            background-color: #fff
           svg
             transform: rotate(180deg)
   &__title
@@ -167,7 +164,7 @@
       margin: 0
       padding-left: 55px
       padding-right: 10px
-      font-size: 11px
+      font-size: 14px
       font-weight: 500
       cursor: pointer
       &::before
@@ -186,7 +183,7 @@
       color: $main-color
       +r(767)
         position: absolute
-        top: 1px
+        top: 3px
         left: 10px
         font-size: 10px
     svg
@@ -232,7 +229,7 @@
       text-transform: uppercase
       +r(767)
         margin: 10px 0
-        font-size: 10px
+        // font-size: 10px
         font-weight: 500
         color: $accent
     ul
@@ -241,7 +238,7 @@
       list-style: none
       +r(767)
         margin-bottom: 10px
-        font-size: 9px
+        // font-size: 9px
       li
         margin-bottom: 10px
         +r(767)

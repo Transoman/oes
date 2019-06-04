@@ -21,10 +21,11 @@
     +r(1200)
       width: auto
     +r(767)
-      max-height: 400px
-    +r(480)
-      max-height: 460px
-      margin: 0 -7.5px
+      margin: 0
+      max-height: none
+    // +r(480)
+    //   max-height: 460px
+    //   margin: 0 -7.5px
     &::before
       content: ''
       position: absolute
@@ -53,10 +54,11 @@
       text-align: center
       color: $title-color
       +r(767)
-        width: 50px
-        height: 50px
-        line-height: 50px
-        font-size: 29px
+        display: none
+        // width: 50px
+        // height: 50px
+        // line-height: 50px
+        // font-size: 29px
   &__right
     width: 40.17%
     margin-left: auto
@@ -129,12 +131,13 @@
   &__col
     padding: 0 15px
     width: 50%
-    +r(480)
-      padding: 0 7.5px
+    +r(767)
+      width: 100%
+      padding: 0
     &:nth-child(3)
       margin-top: 35px
       +r(767)
-        margin-top: 20px
+        margin-top: 0
     .bicon-box
       padding: 35px
       margin-bottom: 30px
@@ -145,8 +148,6 @@
         min-height: auto
       p
         font-size: 14px
-        +r(767)
-          font-size: 8px
       &__head
         margin-bottom: 25px
         +r(767)
@@ -173,4 +174,4 @@
         font-size: 18px
         font-weight: 500
         +r(767)
-          font-size: 11px
+          font-size: 14px
