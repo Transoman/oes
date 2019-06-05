@@ -5,6 +5,7 @@
     $name = isset($_POST['name']) ? htmlspecialchars(trim($_POST['name'])) : '';
     $email = isset($_POST['email']) ? htmlspecialchars(trim($_POST['email'])) : '';
     $phone = isset($_POST['phone']) ? htmlspecialchars(trim($_POST['phone'])) : '';
+    $domain = isset($_POST['domain']) ? htmlspecialchars(trim($_POST['domain'])) : '';
     $subject = isset($_POST['subject']) ? htmlspecialchars(trim($_POST['subject'])) : '';
 
     $important_seo = isset($_POST['important_seo']) ? htmlspecialchars(trim($_POST['important_seo'])) : '';
@@ -31,6 +32,9 @@
     }
     if ($phone) {
       $data .= 'Телефон: '.$phone."<br>";
+    }
+    if ($domain) {
+      $data .= 'Домен: '.$domain."<br>";
     }
     if ($important_seo) {
       $data .= '<p><b>Что вам важно в SEO?:</b> '.$important_seo."</p>";
