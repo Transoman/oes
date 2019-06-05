@@ -1,7 +1,4 @@
-// global.jQuery = require('jquery');
 var svg4everybody = require('svg4everybody');
-// popup = require('jquery-popup-overlay');
-// ScrollMagic = require('scrollmagic');
 import TimelineMax from 'gsap/TimelineMax';
 import TweenMax from 'gsap/TweenMax';
 
@@ -13,14 +10,6 @@ jQuery(document).ready(function($) {
     $(this).toggleClass('active');
     $('.header__nav').toggleClass('open');
   });
-
-  // Modal
-  // $('.modal').popup({
-  //   transition: 'all 0.3s',
-  //   onclose: function() {
-  //     $(this).find('label.error').remove();
-  //   }
-  // });
 
   let scrollProcess = function() {
     if ($(window).width() > 767) {
@@ -41,7 +30,7 @@ jQuery(document).ready(function($) {
       var tween = new TimelineMax()
         .add(TweenMax.to($word, 1, {strokeDashoffset: 0, ease:Linear.easeNone})); // draw word for 0.9
 
-      // // build scene
+      // build scene
       let pinScene = new ScrollMagic.Scene({
         triggerElement: ".process",
         duration: 660,
@@ -59,7 +48,6 @@ jQuery(document).ready(function($) {
         tweenChanges: true
       })
         .setTween(tween)
-        // .addIndicators() // add indicators (requires plugin)
         .addTo(controller);
     
       scene.on("progress", function (event) {
@@ -183,7 +171,6 @@ jQuery(document).ready(function($) {
           tweenChanges: true
         })
           .setTween(tweenScheme)
-          // .addIndicators() // add indicators (requires plugin)
           .addTo(controller);
 
           scene2.on("progress", function (event) {
@@ -318,10 +305,139 @@ jQuery(document).ready(function($) {
     }
   });
 
+  $('.open_test').magnificPopup({
+    items: {
+        src: '#test',
+        type: 'inline'
+    }
+  });
+
+  let startTest = function() {
+
+    $('.start-test').click(function(e) {
+      e.preventDefault();
+      $('.test__hero').fadeOut(0);
+      $('.test-form').fadeIn(200);
+    });
+
+    var currentTab = 0; // Current tab is set to be the first tab (0)
+    showTab(currentTab); // Display the current tab
+
+    $('.steps__btn--prev').click( function(e) {
+      e.preventDefault();
+      nextPrev(-1);
+    } );
+
+    $('.steps__btn--next').click( function(e) {
+      e.preventDefault();
+
+      if ( (currentTab + 1) >  $('.steps__item').length - 1  ) {
+        return false;
+      }
+
+      nextPrev(1);
+    } );
+
+    function showTab(n) {
+      // This function will display the specified tab of the form ...
+      var x = $('.steps__item');
+      x.hide();
+
+      var countStep = x.length;
+      var currentStep = n + 1;
+
+      $('.test-progress__count').text(Math.floor((100 / countStep) * currentStep) + '%');
+      $('.test-progress__line').css({
+        width: Math.floor((100 / countStep) * currentStep) + '%'
+      });
+
+      if ($(x[n]).find('input[type="radio"]:checked').length == 0) {
+        $('.steps__btn--next').attr('disabled', true);
+      }
+      else {
+        $('.steps__btn--next').attr('disabled', false);
+      }
+
+      $(x[n]).css('display', 'block');
+      // ... and fix the Previous/Next buttons:
+      if (n == 0) {
+        $('.steps__btn--prev').css('display', 'none');
+      } else {
+        $('.steps__btn--prev').css('display', 'inline');
+      }
+      if (n == (x.length - 1)) {
+        $('.steps__btn--next').css('display', 'none');
+      } else {
+        $('.steps__btn--next').css('display', 'inline');
+      }
+    }
+
+    function nextPrev(n) {
+
+      // This function will figure out which tab to display
+      var x = $('.steps__item');
+
+      // Hide the current tab:
+      $(x[currentTab]).css('display', 'none');
+      // Increase or decrease the current tab by 1:
+      currentTab = currentTab + n;
+      // if you have reached the end of the form... :
+      if (currentTab >= x.length) {
+        //...the form gets submitted:
+        return false;
+      }
+      // Otherwise, display the correct tab:
+      showTab(currentTab);
+    }
+
+    $('.test-form__label').click(function() {
+      $('.steps__btn--next').attr('disabled', false);
+    });
+
+  };
+
+  let inputsPhone = $('input[type="tel"]');
+  let maskOptions = {
+    mask: '+{7} (000) 000-00-00'
+  };
+
+  for (let i = 0; i < inputsPhone.length; i++) {
+    IMask(inputsPhone[i], maskOptions);
+  }
+
+  $('.ajax-form').submit(function(e) {
+    e.preventDefault();
+    var data = $(this).serialize();
+    ajaxSend($('.ajax-form'), data);
+  });
+
+  function ajaxSend(formName, data) {
+    jQuery.ajax({
+      type: "POST",
+      url: "sendmail.php",
+      data: data,
+      success: function() {
+        $.magnificPopup.open({
+          items: {
+            src: '#test-thanks',
+            type: 'inline'
+          }
+        });
+        setTimeout(function() {
+          $(formName).trigger('reset');
+          $('.test__hero').fadeIn();
+          $('.test-form').fadeOut(0);
+          startTest();
+        }, 2000);
+      }
+    });
+  }
+
   // SVG
   svg4everybody({});
 
   scrollProcess();
+  startTest();
 
   if ($(window).width() < 768) {
     accordion();
