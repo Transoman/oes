@@ -314,11 +314,11 @@ jQuery(document).ready(function($) {
 
   let startTest = function() {
 
-    $('.start-test').click(function(e) {
-      e.preventDefault();
-      $('.test__hero').fadeOut(0);
-      $('.test-form').fadeIn(200);
-    });
+    // $('.start-test').click(function(e) {
+    //   e.preventDefault();
+    //   $('.test__hero').fadeOut(0);
+    //   $('.test-form').fadeIn(200);
+    // });
 
     var currentTab = 0; // Current tab is set to be the first tab (0)
     showTab(currentTab); // Display the current tab
@@ -425,8 +425,8 @@ jQuery(document).ready(function($) {
         });
         setTimeout(function() {
           $(formName).trigger('reset');
-          $('.test__hero').fadeIn();
-          $('.test-form').fadeOut(0);
+          // $('.test__hero').fadeIn();
+          // $('.test-form').fadeOut(0);
           startTest();
         }, 2000);
       }
